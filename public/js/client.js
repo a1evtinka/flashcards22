@@ -1,14 +1,17 @@
-currentFlashCard = 0;
-const flashcardsList = [];
+let currentFlashCard = 0;
+let flashcardCount = 0;
+let flashcardList;
 
 const [flashcardContainer] = document.getElementsByClassName('flashcard');
 const [answerForm] = document.getElementsByClassName('flashcard');
 
-// answerForm.addEventListener('submit', (event) => {
-//   event.preventDefault();
-//   currentFlashCard += 1;
-//   flashcardContainer.innerHTML = form(flashcardsList[currentFlashCard].question);
-// });
+answerForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (flashcardCount <= currentFlashCard) { return; }
+  currentFlashCard += 1;
+  flashcardContainer.innerHTML = form(flashcardList[currentFlashCard].question);
+  console.log(currentFlashCard);
+});
 
 function form(question = '') {
   return `<form>
@@ -29,8 +32,9 @@ divContainer.addEventListener('click',
       const response = await fetch(`/topic/${topic_id}`, { method: 'GET' });
       if (response.status === 200) {
         const { data:flashcards } = await response.json();
+        flashcardList = flashcards;
+        flashcardCount = flashcards.length - 1;
         if (flashcards.length > 0) {
-          // flashcardsList = await flashcards;
           flashcardContainer.innerHTML = form(flashcards[currentFlashCard].question);
         }
       }

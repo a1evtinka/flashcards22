@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "custom",
+    "password": 10010110,
+    "database": "w4d5",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "custom",
+    "password": 10010110,
+    "database": "w4d5",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "custom",
+    "password": 10010110,
+    "database": "w4d5",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

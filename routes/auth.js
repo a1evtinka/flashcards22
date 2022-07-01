@@ -9,6 +9,7 @@ const Log = require('../views/Reg');
 
 const { User } = require('../db/models'); // <<<--------------
 
+
 authRouter
   .route('/')
   .get((req, res) => {

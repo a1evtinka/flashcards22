@@ -18,3 +18,4 @@ config(app);
 app.use('auth', authRouter);
 
 app.listen(PORT, async () => console.log('Веб-сервер слушает порт', PORT));
+

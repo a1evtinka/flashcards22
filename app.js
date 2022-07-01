@@ -16,7 +16,6 @@ const app = express();
 config(app);
 
 // Подключение роутеров
-
 app.use('/auth', authRouter);
 app.use('/', mainRouter);
 app.use('/scores', require('./routes/score.router'));

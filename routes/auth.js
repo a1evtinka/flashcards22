@@ -7,10 +7,11 @@ const bcrypt = require('bcrypt');
 const Reg = require('../views/Reg');
 const Log = require('../views/Reg');
 
-const { User } = require('../db/models');
+const { User } = require('../db/models'); // <<<--------------
+
 
 authRouter
-  .route('/reg')
+  .route('/')
   .get((req, res) => {
     res.renderComponent(Reg);
   })

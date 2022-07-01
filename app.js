@@ -18,7 +18,6 @@ config(app);
 // Подключение роутеров
 app.use(authRouter);
 app.use('/', mainRouter);
+app.use('/scores', require('./routes/score.router'));
 
 app.listen(PORT, async () => console.log('Веб-сервер слушает порт', PORT));
-
-

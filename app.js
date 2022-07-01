@@ -1,11 +1,21 @@
 require('dotenv').config();
+
+require('@babel/register');
+
 const express = require('express');
+const config = require('./config/config');
+const PORT = process.env.PORT ?? 3000;
+
+// Импорт роутеров
+const authRouter = require('./routes/API/auth.routes');
 
 const app = express();
 
-const PORT = process.env.PORT ?? 3000
+// Конфигурация сервера
+config(app);
 
-app.listen(PORT, () => {
-    console.log('server started at 3000')
-})
+// Подключение роутеров
+app.use(authRouter);
+
+app.listen(PORT, async () => console.log('Веб-сервер слушает порт', PORT));
 

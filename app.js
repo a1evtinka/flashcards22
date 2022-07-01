@@ -10,14 +10,14 @@ const PORT = process.env.PORT ?? 3000;
 const authRouter = require('./routes/auth');
 const mainRouter = require('./routes/index');
 
+
 const app = express();
 
 // Конфигурация сервера
 config(app);
 
 // Подключение роутеров
-
-app.use(authRouter);
+app.use('/auth', authRouter);
 app.use('/', mainRouter);
 app.use('/scores', require('./routes/score.router'));
 

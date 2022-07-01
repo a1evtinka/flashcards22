@@ -7,7 +7,8 @@ const bcrypt = require('bcrypt');
 const Reg = require('../views/Reg');
 const Log = require('../views/Reg');
 
-const { User } = require('../db/models'); // <<<--------------
+
+const { User } = require('../db/models');
 
 
 authRouter
@@ -17,8 +18,20 @@ authRouter
   })
   .post(async (req, res) => {
     const { login, name, email, password } = req.body;
-    const user = await User.findAll({ where: { email } });
-    
+    console.log('---->', req.body);
+    const mail = await User.findOne({ where: { email }, raw: true });
+    console.log('---->', mail);
+    if (mail) {
+      res.status(400).json({ message: 'error' });
+    } else {
+      const user = await User.create({
+        login,
+        name,
+        email,
+        password: await bcrypt.hash(password, 10),
+      });
+      res.redirect('/');
+    }
   });
 
-  module.exports = authRouter;
+module.exports = authRouter;

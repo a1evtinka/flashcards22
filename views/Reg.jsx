@@ -47,11 +47,12 @@ module.exports = function Reg() {
           type="Password"
           placeholder="Повторите пароль"
         />
-        <button className="btn_reg" type="submit">
+        <button className="btn" type="submit" id="registr">
           Зарегистрироваться
         </button>
         <div className="error-div" />
       </form>
+      <script src="/js/reg.css" />
     </Layout>
   );
 };

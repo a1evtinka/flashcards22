@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 const Reg = require('../views/Reg');
 const Log = require('../views/Reg');
 
-const { User } = require('???'); // <<<--------------
+const { User } = require('../db/models');
 
 authRouter
   .route('/reg')
@@ -19,3 +19,5 @@ authRouter
     const user = await User.findAll({ where: { email } });
     
   });
+
+  module.exports = authRouter;

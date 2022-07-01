@@ -7,7 +7,7 @@ module.exports = function Score({ users }) {
   return (
     <Layout>
       <NavBar></NavBar>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">#</th>

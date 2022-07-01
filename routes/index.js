@@ -2,8 +2,8 @@ const express = require('express');
 const ReactDOMServer = require('react-dom/server');
 const React = require('react');
 
-const Home = require('../views/Home');
-const router = require.Router();
+const Main = require('../views/Main');
+const router = express.Router();
 const mainRouter = require('express').Router();
 
 router.get('/', (req, res) => { // vfршрут на главную страницу

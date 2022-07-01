@@ -12,7 +12,7 @@ const { User } = require('../db/models');
 
 
 authRouter
-  .route('/')
+  .route('/reg')
   .get((req, res) => {
     res.renderComponent(Reg);
   })

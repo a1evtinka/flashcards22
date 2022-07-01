@@ -7,7 +7,7 @@ module.exports = function Reg() {
     <Layout>
       <NavBar></NavBar>
 
-      <form className="form-reg" action="/reg" method="POST">
+      <form className="form-reg" id="form-reg">
         <input
           required
           className="input"
@@ -52,7 +52,6 @@ module.exports = function Reg() {
         </button>
         <div className="error-div" />
       </form>
-      <script src="/js/reg.css" />
     </Layout>
   );
 };

@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Topic extends Model {
     /**
@@ -14,11 +12,24 @@ module.exports = (sequelize, DataTypes) => {
       Topic.hasMany(Flashcard, { foreignKey: 'topic_id' });
     }
   }
-  Topic.init({
-    title: DataTypes.TEXT
-  }, {
-    sequelize,
-    modelName: 'Topic',
-  });
+  Topic.init(
+    {
+      title: {
+        type: DataTypes.TEXT,
+      },
+      createdAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
+    },
+    {
+      sequelize,
+      modelName: 'Topic',
+    }
+  );
   return Topic;
 };

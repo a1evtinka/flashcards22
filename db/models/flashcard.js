@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Flashcard extends Model {
     /**
@@ -14,20 +12,42 @@ module.exports = (sequelize, DataTypes) => {
       Flashcard.belongsTo(Topic, { foreignKey: 'topic_id' });
     }
   }
-  Flashcard.init({
-    topic_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'Topics',
-        key: 'id',
+  Flashcard.init(
+    {
+      topic_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Topics',
+          key: 'id',
+        },
+      },
+      topic_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'Topics',
+          key: 'id',
+        },
+      },
+      question: {
+        type: DataTypes.TEXT,
+      },
+      answer: {
+        type: DataTypes.TEXT,
+      },
+      createdAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
       },
     },
-    question: DataTypes.TEXT,
-    answer: DataTypes.TEXT
-  }, {
-    sequelize,
-    modelName: 'Flashcard',
-  });
+    {
+      sequelize,
+      modelName: 'Flashcard',
+    }
+  );
   return Flashcard;
 };

@@ -20,7 +20,7 @@ module.exports = function Log() {
           type="password"
           placeholder="Пароль"
         />
-        <button className="btn" type="submit">
+        <button className="btn_log" type="submit">
           Авторизироваться
         </button>
       </form>

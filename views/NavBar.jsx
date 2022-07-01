@@ -3,7 +3,6 @@ const Layout = require('./Layout');
 
 module.exports = function NavBar() {
   return (
-    <Layout>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="#">
           Главная
@@ -44,6 +43,5 @@ module.exports = function NavBar() {
           </ul>
         </div>
       </nav>
-    </Layout>
   );
 };

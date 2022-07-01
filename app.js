@@ -7,7 +7,7 @@ const config = require('./config/config');
 const PORT = process.env.PORT ?? 3000;
 
 // Импорт роутеров
-const authRouter = require('./routes/API/auth.routes');
+const authRouter = require('./routes/auth');
 
 const app = express();
 
@@ -15,7 +15,6 @@ const app = express();
 config(app);
 
 // Подключение роутеров
-app.use('auth', authRouter);
+app.use('/auth', authRouter);
 
 app.listen(PORT, async () => console.log('Веб-сервер слушает порт', PORT));
-

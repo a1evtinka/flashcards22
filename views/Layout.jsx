@@ -37,6 +37,7 @@ module.exports = function Layout({ children }) {
           integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
           crossOrigin="anonymous"
         ></script>
+        <script defer src="/JS/reg.js"></script>
       </body>
     </html>
   );

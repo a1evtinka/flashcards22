@@ -13,6 +13,11 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        title: 'бонус',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ], {});
   },
 

@@ -15,6 +15,6 @@ const app = express();
 config(app);
 
 // Подключение роутеров
-app.use(authRouter);
+app.use('auth', authRouter);
 
 app.listen(PORT, async () => console.log('Веб-сервер слушает порт', PORT));

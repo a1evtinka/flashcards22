@@ -15,7 +15,7 @@ authRouter
     res.renderComponent(Reg);
   })
   .post(async (req, res) => {
-    const { login, name, email, password } = req.body;
+    const { login, name, email, password, checkPassword } = req.body;
+
     const user = await User.findAll({ where: { email } });
-    
   });

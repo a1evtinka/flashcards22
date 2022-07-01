@@ -3,7 +3,7 @@ const logger = require('morgan');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const cookieParser = require('cookie-parser');
-const ReactSsr = require('../middleware/reactSsr.js');
+const ReactSsr = require('../middleware/reactSsr');
 const path = require('path');
 
 // Конфигурация сессии

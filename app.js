@@ -10,7 +10,6 @@ const PORT = process.env.PORT ?? 3000;
 const authRouter = require('./routes/auth');
 const mainRouter = require('./routes/index');
 
-
 const app = express();
 
 // Конфигурация сервера

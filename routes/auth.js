@@ -18,11 +18,10 @@ authRouter
   })
   .post(async (req, res) => {
     const { login, name, email, password } = req.body;
-    console.log('---->', req.body);
-    const mail = await User.findOne({ where: { email }, raw: true });
-    console.log('---->', mail);
-    if (mail) {
-      res.status(400).json({ message: 'error' });
+    const user = await User.findOne({ where: { email } });
+    if (user) {
+      res.json({ reg: false });
+      return;
     } else {
       const user = await User.create({
         login,
@@ -30,7 +29,7 @@ authRouter
         email,
         password: await bcrypt.hash(password, 10),
       });
-      res.redirect('/');
+      res.json({ reg: true });
     }
   });
 

@@ -7,7 +7,7 @@ module.exports = function Reg() {
     <Layout>
       <NavBar></NavBar>
 
-      <form className="form-reg" action="/auth/reg" method="POST">
+      <form className="form-reg" id="form-reg">
         <input
           required
           className="input"
@@ -47,12 +47,11 @@ module.exports = function Reg() {
           type="Password"
           placeholder="Повторите пароль"
         />
-        <button className="btn" type="submit" id="registr">
+        <button className="btn" type="submit">
           Зарегистрироваться
         </button>
         <div className="error-div" />
       </form>
-      <script src="/js/reg.css" />
     </Layout>
   );
 };
